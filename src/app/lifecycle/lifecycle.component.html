@@ -1,0 +1,9 @@
+<p>gallery works!</p>
+<input [(ngModel)]="inputValue" (keyup.enter)="getMovie()" type="text" />
+<button (click)="getMovie()">Gönder</button>
+
+<div class="movie" *ngFor="let el of movies">
+    <img class="movie-image" src="{{el.image.medium}}" />
+   <p class="movie-name">{{el.name}}</p>
+   <p class="movie-summary" [innerHTML]="el.summary | stripHtml"></p>
+</div> 
